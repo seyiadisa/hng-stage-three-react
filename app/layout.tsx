@@ -1,0 +1,31 @@
+import type { Metadata } from "next";
+import { Manrope } from "next/font/google";
+import "./globals.css";
+import AppHeader from "./components/layout/header";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+});
+
+export const metadata: Metadata = {
+  title: "Audiophile",
+  description: "Get your audio equipment at affordable rates",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={`${manrope.variable} antialiased`}>
+        <div className="body bg-foreground">
+          <AppHeader />
+          {children}
+        </div>
+      </body>
+    </html>
+  );
+}
