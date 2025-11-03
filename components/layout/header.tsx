@@ -20,7 +20,7 @@ export default function AppHeader({ className }: { className?: string }) {
   return (
     <div className={cn("bg-foreground w-screen", className)}>
       {isTabOrMobile ? (
-        <header className="flex items-center justify-between gap-[42px] border-b border-white/[.104] px-6 py-8 md:mx-10 md:justify-start md:px-0">
+        <header className="flex items-center justify-between gap-[42px] border-b border-white/[.104] px-6 py-8 md:mx-10 md:justify-start md:px-0 lg:py-9">
           <Image src="/svg/menu.svg" width={16} height={15} alt="" />
           <div className="flex items-center md:flex-1">
             <Link href="/" className="">
