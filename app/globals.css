@@ -5,7 +5,11 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-muted: var(--primary-muted);
+  --color-muted: var(--muted);
   --font-manrope: var(--font-manrope);
+  --text-sm: 13px;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -18,7 +22,7 @@
   --foreground: #000000;
   --primary: #d87d4a;
   --primary-foreground: #f1f1f1;
-  --secondary: #fbaf85;
+  --primary-muted: #fbaf85;
   --muted: #f1f1f1;
 }
 
@@ -30,8 +34,4 @@
   .body {
     @apply w-screen max-w-[1440px] min-h-screen overflow-x-hidden;
   }
-}
-
-@utility h1s {
-  @apply text-2xl;
 }

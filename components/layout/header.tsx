@@ -1,18 +1,28 @@
 "use client";
 
 import { useIsTablet } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-export default function AppHeader() {
-  const isTab = useIsTablet();
+export const HeaderWrapper = () => {
+  const pathname = usePathname();
+
+  if (pathname === "/") return null;
+
+  return <AppHeader />;
+};
+
+export default function AppHeader({ className }: { className?: string }) {
+  const isTabOrMobile = useIsTablet();
 
   return (
-    <div className="bg-foreground w-screen">
-      {isTab ? (
-        <header className="flex items-center justify-between md:justify-start gap-[42px] px-6 py-8 md:px-0 md:mx-10 border-b border-white/[.104]">
+    <div className={cn("bg-foreground w-screen", className)}>
+      {isTabOrMobile ? (
+        <header className="flex items-center justify-between gap-[42px] border-b border-white/[.104] px-6 py-8 md:mx-10 md:justify-start md:px-0">
           <Image src="/svg/menu.svg" width={16} height={15} alt="" />
-          <div className="md:flex-1 flex items-center">
+          <div className="flex items-center md:flex-1">
             <Link href="/" className="">
               <Image
                 src="/svg/audiophile.svg"
@@ -25,7 +35,7 @@ export default function AppHeader() {
           <Image src="/svg/shopping-cart.svg" width={23} height={20} alt="" />
         </header>
       ) : (
-        <header className="flex items-center justify-between py-9 border-b border-white/20 mx-40">
+        <header className="mx-[165px] flex items-center justify-between border-b border-white/20 py-9">
           <Link href="/" className="">
             <Image
               src="/svg/audiophile.svg"
@@ -35,7 +45,7 @@ export default function AppHeader() {
             />
           </Link>
           <nav>
-            <ul className="flex items-center text-sm uppercase text-background gap-8 font-bold leading-6 tracking-[2px] *:hover:text-primary">
+            <ul className="text-background *:hover:text-primary flex items-center gap-8 text-sm leading-6 font-bold tracking-[2px] uppercase">
               <li>
                 <Link href="/">Home</Link>
               </li>
