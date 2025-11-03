@@ -20,13 +20,13 @@ export default function AppFooter() {
                 <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/about">Headphones</Link>
+                <Link href="/headphones">Headphones</Link>
               </li>
               <li>
-                <Link href="/contact">Speakers</Link>
+                <Link href="/speakers">Speakers</Link>
               </li>
               <li>
-                <Link href="/contact">Earphones</Link>
+                <Link href="/earphones">Earphones</Link>
               </li>
             </ul>
           </nav>
