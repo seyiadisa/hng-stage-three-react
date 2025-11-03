@@ -7,13 +7,9 @@ export default function Home() {
   return (
     <>
       <Banner />
-      <div className="mt-[92px] px-6 md:mt-[148px] md:px-10 lg:mt-[200px] lg:px-[120px] xl:px-[165px]">
+      <div className="container_ mt-10 mb-[120px] space-y-[120px] md:my-24 md:space-y-24 lg:mt-[120px] lg:mb-[200px] lg:*:last:mt-[200px] lg:*:nth-[2]:mt-[168px]">
         <ProductSections />
-      </div>
-      <div className="mt-[120px] px-6 md:mt-24 md:px-10 lg:mt-[168px] lg:px-[120px] xl:px-[165px]">
         <ProductHighlights />
-      </div>
-      <div className="my-[120px] px-6 md:my-24 md:px-10 lg:my-[200px] lg:px-[120px] xl:px-[165px]">
         <Tagline />
       </div>
     </>

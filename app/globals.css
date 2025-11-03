@@ -26,6 +26,20 @@
   --muted: #f1f1f1;
 }
 
+@layer base {
+  body {
+    @apply bg-background text-foreground font-manrope flex justify-center;
+  }
+
+  .body {
+    @apply min-h-screen w-screen max-w-[1440px] overflow-x-hidden;
+  }
+}
+
+@utility container_ {
+  @apply w-full px-6 md:px-10 lg:px-[120px] xl:px-[165px];
+}
+
 @utility text-h1 {
   font-size: 56px;
   font-weight: 700;
@@ -90,12 +104,9 @@
   text-transform: uppercase;
 }
 
-@layer base {
-  body {
-    @apply bg-background text-foreground font-manrope flex justify-center;
-  }
-
-  .body {
-    @apply min-h-screen w-screen max-w-[1440px] overflow-x-hidden;
-  }
+@utility text-body {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0px;
 }

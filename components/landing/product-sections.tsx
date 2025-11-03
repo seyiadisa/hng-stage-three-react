@@ -25,8 +25,8 @@ export default function ProductSections() {
     },
   ];
   return (
-    <section>
-      <ul className="flex w-full flex-col items-center gap-[68px] md:mt-[148px] md:flex-row md:gap-2.5 lg:justify-center lg:gap-[30px]">
+    <section className="pt-[52px] lg:pt-20">
+      <ul className="flex w-full flex-col items-center gap-[68px] md:flex-row md:gap-2.5 lg:justify-center lg:gap-[30px]">
         {products.map((product, index) => (
           <Section key={index} product={product.name} image={product.image} />
         ))}
