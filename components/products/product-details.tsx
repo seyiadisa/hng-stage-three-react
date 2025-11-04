@@ -34,11 +34,11 @@ export default function ProductDetails({
       <div className="flex w-full flex-col items-center lg:items-start">
         {isNew ? (
           <>
-            <h1 className="text-overline text-primary">New Product</h1>
-            <h2 className="text-h4 my-6 md:mt-4 md:mb-8 lg:w-4/5">{name}</h2>
+            <h2 className="text-overline text-primary">New Product</h2>
+            <h3 className="text-h4 my-6 md:mt-4 md:mb-8 lg:w-4/5">{name}</h3>
           </>
         ) : (
-          <h1 className="text-h4 mb-6 md:mb-8 lg:w-4/5">{name}</h1>
+          <h2 className="text-h4 mb-6 md:mb-8 lg:w-4/5">{name}</h2>
         )}
         <p className="text-body mb-6 w-11/12 opacity-50 md:w-5/6 lg:mb-10 lg:w-full">
           {children}

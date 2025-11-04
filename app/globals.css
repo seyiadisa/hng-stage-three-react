@@ -9,7 +9,6 @@
   --color-primary-muted: var(--primary-muted);
   --color-muted: var(--muted);
   --font-manrope: var(--font-manrope);
-  --text-sm: 13px;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -28,7 +27,7 @@
 
 @layer base {
   body {
-    @apply bg-background text-foreground font-manrope flex justify-center;
+    @apply bg-background text-foreground font-manrope text-body flex justify-center;
   }
 
   .body {
