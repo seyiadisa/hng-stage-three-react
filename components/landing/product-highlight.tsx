@@ -3,6 +3,7 @@ import tableImg from "@/public/images/speaker-table.webp";
 import earphonesImg from "@/public/images/earphones-highlight.webp";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function ProductHighlights() {
   return (
@@ -29,7 +30,7 @@ export default function ProductHighlights() {
               truly remarkable sound.
             </p>
             <Button className="w-fit bg-black hover:bg-[#4C4C4C] md:mt-4">
-              See Product
+              <Link href="/product/zx9">See Product</Link>
             </Button>
           </div>
         </section>
@@ -48,7 +49,7 @@ export default function ProductHighlights() {
               Zx7 Speaker
             </h1>
             <Button variant={"outline"} className="bg-transparent">
-              See Product
+              <Link href="/product/zx7">See Product</Link>
             </Button>
           </div>
         </section>
@@ -66,7 +67,7 @@ export default function ProductHighlights() {
               YX1 Earphones
             </h1>
             <Button variant={"outline"} className="bg-primary-foreground">
-              See Product
+              <Link href="/product/yx1">See Product</Link>
             </Button>
           </div>
         </section>

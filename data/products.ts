@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 
-import xx99Img from "@/public/images/products/headphones-1.webp";
+import xx99iiImg from "@/public/images/products/headphones-1.webp";
 import headphonesImg2 from "@/public/images/products/headphones-2.webp";
 import headphonesImg3 from "@/public/images/products/headphones-3.webp";
 
@@ -19,10 +19,10 @@ type Product = {
 };
 
 export const products: Product = {
-  xx99: {
+  xx99ii: {
     isNew: true,
     name: "XX99 Mark II Headphones",
-    image: xx99Img,
+    image: xx99iiImg,
     price: 2999,
     details:
       "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",

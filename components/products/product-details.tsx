@@ -1,16 +1,19 @@
 import Image, { StaticImageData } from "next/image";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function ProductDetails({
   name,
   image,
+  url,
   isNew = false,
   isReverse = false,
   children,
 }: {
   name: string;
   image: string | StaticImageData;
+  url: string;
   isNew?: boolean;
   isReverse?: boolean;
   children: React.ReactNode;
@@ -43,7 +46,9 @@ export default function ProductDetails({
         <p className="text-body mb-6 w-11/12 opacity-50 md:w-5/6 lg:mb-10 lg:w-full">
           {children}
         </p>
-        <Button>See Product</Button>
+        <Button>
+          <Link href={url}>See Product</Link>
+        </Button>
       </div>
     </section>
   );

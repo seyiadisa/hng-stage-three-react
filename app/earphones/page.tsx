@@ -14,6 +14,7 @@ export default function EarphonesPage() {
           <ProductDetails
             isNew
             name="YX1 WIRELESS EARPHONES"
+            url="/product/yx1"
             image={earphonesImg}
           >
             Tailor your listening experience with bespoke dynamic drivers from

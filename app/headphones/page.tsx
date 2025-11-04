@@ -16,6 +16,7 @@ export default function HeadphonesPage() {
           <ProductDetails
             isNew
             name="XX99 Mark II Headphones"
+            url="/product/xx99ii"
             image={headphonesImg1}
           >
             The new XX99 Mark II headphones is the pinnacle of pristine audio.
@@ -26,6 +27,7 @@ export default function HeadphonesPage() {
           <ProductDetails
             isReverse
             name="XX99 Mark I Headphones"
+            url="/product/xx99"
             image={headphonesImg2}
           >
             As the gold standard for headphones, the classic XX99 Mark I offers
@@ -33,7 +35,11 @@ export default function HeadphonesPage() {
             engineers, and music aficionados alike in studios and on the go.
           </ProductDetails>
 
-          <ProductDetails name="XX59 Headphones" image={headphonesImg3}>
+          <ProductDetails
+            name="XX59 Headphones"
+            url="/product/xx59"
+            image={headphonesImg3}
+          >
             Enjoy your audio almost anywhere and customize it to your specific
             tastes with the XX59 headphones. The stylish yet durable versatile
             wireless headset is a brilliant companion at home or on the move.

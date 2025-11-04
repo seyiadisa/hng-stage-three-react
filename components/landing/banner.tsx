@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import AppHeader from "@/components/layout/header";
 import bannerImg from "@/public/images/banner.webp";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Banner() {
   return (
@@ -31,7 +32,9 @@ export default function Banner() {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
-        <Button>See Product</Button>
+        <Button asChild>
+          <Link href="/product/xx99ii">See Product</Link>
+        </Button>
       </div>
     </section>
   );
