@@ -17,7 +17,7 @@ export default async function ProductInfoPage({
     <main>
       <div className="container_">
         <div className="mt-6 space-y-[88px] md:space-y-[120px] lg:mt-14">
-          <section className="flex flex-col items-start justify-between gap-8 text-start md:flex-row md:gap-[68px] lg:gap-20 lg:text-start xl:gap-[125px]">
+          <section className="flex flex-col items-start justify-between gap-8 text-start md:flex-row md:items-center md:gap-[68px] lg:gap-20 lg:text-start xl:gap-[125px]">
             <div className="bg-primary-foreground relative flex h-[352px] w-full shrink-0 items-center justify-center overflow-hidden rounded-md px-[70px] py-[41px] md:h-[480px] md:w-[281px] lg:h-[456px] lg:w-[440px] lg:py-[68px] xl:h-[560px] xl:w-[540px]">
               <Image
                 src={product.image}
@@ -31,7 +31,7 @@ export default async function ProductInfoPage({
               {product.isNew ? (
                 <>
                   <h1 className="text-overline text-primary">New Product</h1>
-                  <h2 className="text-h4 my-6 md:mt-4 md:mb-8 lg:w-4/5">
+                  <h2 className="text-h4 my-6 md:mt-[17px] md:mb-8 lg:mt-4 lg:w-4/5">
                     {product.name}
                   </h2>
                 </>
@@ -40,10 +40,12 @@ export default async function ProductInfoPage({
                   {product.name}
                 </h1>
               )}
-              <p className="text-body opacity-50 md:w-5/6 lg:mb-10 lg:w-full">
+              <p className="text-body opacity-50 md:w-5/6 lg:w-full">
                 {product.details}
               </p>
-              <p className="text-h6 my-6">{formatPrice(product.price)}</p>
+              <p className="text-h6 mt-6 mb-[31px] md:mt-8 lg:mb-[47px]">
+                {formatPrice(product.price)}
+              </p>
               <Button>Add to Cart</Button>
             </div>
           </section>
@@ -69,7 +71,7 @@ export default async function ProductInfoPage({
               <ul className="space-y-2 md:flex-1 lg:flex-none">
                 {Object.entries(product.inTheBox).map(([key, value]) => (
                   <li key={key} className="flex items-center gap-6">
-                    <span className="text-primary font-bold">{value}x</span>
+                    <span className="text-primary w-6 font-bold">{value}x</span>
                     <span className="opacity-50">{key}</span>
                   </li>
                 ))}
@@ -81,8 +83,8 @@ export default async function ProductInfoPage({
         </div>
 
         <div className="my-[120px] space-y-[120px]">
-          <section>
-            <h2 className="text-h5 leading-9 tracking-[0.86px]">
+          <section className="w-full">
+            <h2 className="text-h5 mx-auto w-fit leading-9 tracking-[0.86px]">
               You may also like
             </h2>
           </section>
