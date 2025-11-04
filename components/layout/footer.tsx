@@ -45,8 +45,8 @@ export default function AppFooter() {
             </p>
           </div>
           <div className="flex w-full flex-col items-center gap-12 md:flex-row md:justify-between lg:contents">
-            <div className="flex items-center gap-4">
-              <Link href="">
+            <div className="flex items-center gap-4 *:transition-opacity *:duration-150 *:hover:opacity-50">
+              <Link href="https://web.facebook.com/seyi.adisa.165">
                 <Image
                   src="/svg/facebook.svg"
                   alt="Facebook logo"
@@ -55,7 +55,7 @@ export default function AppFooter() {
                   className=""
                 />
               </Link>
-              <Link href="">
+              <Link href="https://x.com/SeyiAdisa1">
                 <Image
                   src="/svg/twitter.svg"
                   alt="Twitter logo"
@@ -63,7 +63,7 @@ export default function AppFooter() {
                   height={19.5}
                 />
               </Link>
-              <Link href="">
+              <Link href="https://www.instagram.com/seyiadisaa/">
                 <Image
                   src="/svg/instagram.svg"
                   alt="Instagram logo"
