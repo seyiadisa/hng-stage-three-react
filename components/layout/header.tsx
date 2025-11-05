@@ -26,8 +26,15 @@ const navLinks = [
 ];
 
 export default function AppHeader({ className }: { className?: string }) {
+  const pathname = usePathname();
   const isTabOrMobile = useIsTablet();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [prevPath, setPrevPath] = useState(pathname);
+
+  if (prevPath !== pathname) {
+    setPrevPath(pathname);
+    setIsMenuOpen(false);
+  }
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
@@ -56,12 +63,7 @@ export default function AppHeader({ className }: { className?: string }) {
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
-            <div
-              className={cn(
-                "flex items-center md:flex-1"
-                // isMenuOpen && "invisible"
-              )}
-            >
+            <div className={cn("flex items-center md:flex-1")}>
               <Link href="/" className="">
                 <Image
                   src="/svg/audiophile.svg"
@@ -83,11 +85,11 @@ export default function AppHeader({ className }: { className?: string }) {
           {/* Mobile menu */}
           <div
             className={cn(
-              "invisible fixed inset-x-0 top-[90px] z-100 h-[calc(100vh-90px)] overflow-y-auto bg-black/40 opacity-0 transition-opacity duration-300 ease-in-out md:px-10",
+              "invisible fixed inset-x-0 top-[90px] z-100 h-[calc(100vh-90px)] overflow-y-auto bg-black/40 opacity-0 transition-opacity duration-300 ease-in-out",
               isMenuOpen ? "visible opacity-100" : "pointer-events-none"
             )}
           >
-            <nav className="rounded-b-md bg-white px-6 pt-8 pb-9">
+            <nav className="rounded-b-md bg-white px-6 pt-8 pb-9 md:px-10 md:pt-14 md:pb-16">
               <ProductSections />
             </nav>
           </div>
