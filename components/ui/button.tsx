@@ -6,13 +6,13 @@ import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center leading-[100%] font-bold tracking-[1px] gap-3 whitespace-nowrap uppercase text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-black focus-visible:ring-black/50 focus-visible:ring-[3px]",
+  "inline-flex items-center justify-center leading-[100%] font-bold tracking-[1px] gap-3 whitespace-nowrap uppercase text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "px-8 py-[15px] bg-primary text-white hover:bg-primary-muted",
+        default: "w-[160px] h-12 bg-primary text-white hover:bg-primary-muted",
         outline:
-          "px-8 py-[15px] border border-black bg-white text-black hover:bg-black hover:text-white",
+          "w-[160px] h-12 border border-black bg-white text-black hover:bg-black hover:text-white",
         ghost: "text-black/50 hover:text-primary",
       },
     },

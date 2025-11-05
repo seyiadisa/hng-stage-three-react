@@ -1,27 +1,12 @@
-import { StaticImageData } from "next/image";
-
 import xx99iiImg from "@/public/images/products/headphones-1.webp";
 import xx99iImg from "@/public/images/products/headphones-2.webp";
 import xx59Img from "@/public/images/products/headphones-3.webp";
 import zx9Img from "@/public/images/products/speakers-1.webp";
 import zx7Img from "@/public/images/products/speakers-2.webp";
 import yx1Img from "@/public/images/products/earphones.webp";
+import { Products } from "@/types";
 
-type Product = {
-  [key: string]: {
-    isNew: boolean;
-    name: string;
-    image: StaticImageData;
-    price: number;
-    details: string;
-    features: string;
-    inTheBox: {
-      [key: string]: number;
-    };
-  };
-};
-
-export const products: Product = {
+export const products: Products = {
   xx99ii: {
     isNew: true,
     name: "XX99 Mark II Headphones",

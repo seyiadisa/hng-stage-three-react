@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import CartDropdown from "../cart/cart";
 
 export const HeaderWrapper = () => {
   const pathname = usePathname();
@@ -69,12 +70,14 @@ export default function AppHeader({ className }: { className?: string }) {
                 />
               </Link>
             </div>
-            <Image
-              src="/svg/shopping-cart.svg"
-              width={23}
-              height={20}
-              alt="My Cart"
-            />
+            <CartDropdown>
+              <Image
+                src="/svg/shopping-cart.svg"
+                width={23}
+                height={20}
+                alt="My Cart"
+              />
+            </CartDropdown>
           </header>
           <div
             className={cn(
@@ -114,12 +117,14 @@ export default function AppHeader({ className }: { className?: string }) {
               ))}
             </ul>
           </nav>
-          <Image
-            src="/svg/shopping-cart.svg"
-            width={23}
-            height={20}
-            alt="My Cart"
-          />
+          <CartDropdown>
+            <Image
+              src="/svg/shopping-cart.svg"
+              width={23}
+              height={20}
+              alt="My Cart"
+            />
+          </CartDropdown>
         </header>
       )}
     </div>

@@ -1,9 +1,9 @@
 import ProductSections from "@/components/landing/product-sections";
 import Tagline from "@/components/landing/tagline";
-import { Button } from "@/components/ui/button";
 import { products } from "@/data/products";
 import { formatPrice } from "@/lib/utils";
 import Image from "next/image";
+import AddToCart from "../../../components/cart/add-to-cart";
 
 export default async function ProductInfoPage({
   params,
@@ -46,7 +46,8 @@ export default async function ProductInfoPage({
               <p className="text-h6 mt-6 mb-[31px] md:mt-8 lg:mb-[47px]">
                 {formatPrice(product.price)}
               </p>
-              <Button>Add to Cart</Button>
+
+              <AddToCart id={id} product={product} />
             </div>
           </section>
 
