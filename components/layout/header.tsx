@@ -8,6 +8,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import CartDropdown from "../cart/cart";
+import ProductSections from "../landing/product-sections";
 
 export const HeaderWrapper = () => {
   const pathname = usePathname();
@@ -79,22 +80,15 @@ export default function AppHeader({ className }: { className?: string }) {
               />
             </CartDropdown>
           </header>
+          {/* Mobile menu */}
           <div
             className={cn(
-              "fixed inset-x-0 top-[90px] z-100 h-[calc(100vh-90px)] bg-black px-6 py-14 text-white opacity-0 transition-opacity duration-300 ease-in-out md:px-10",
-              isMenuOpen ? "opacity-100" : "pointer-events-none"
+              "invisible fixed inset-x-0 top-[90px] z-100 h-[calc(100vh-90px)] overflow-y-auto bg-black/40 opacity-0 transition-opacity duration-300 ease-in-out md:px-10",
+              isMenuOpen ? "visible opacity-100" : "pointer-events-none"
             )}
           >
-            <nav>
-              <ul className="text-subtitle *:hover:text-primary flex flex-col items-center gap-8 tracking-[2px]">
-                {navLinks.map(({ href, label }) => (
-                  <li key={href}>
-                    <Link href={href} onClick={() => setIsMenuOpen(false)}>
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+            <nav className="rounded-b-md bg-white px-6 pt-8 pb-9">
+              <ProductSections />
             </nav>
           </div>
         </>
