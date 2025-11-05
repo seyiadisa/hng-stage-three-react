@@ -3,6 +3,7 @@ import { StaticImageData } from "next/image";
 export type Product = {
   isNew: boolean;
   name: string;
+  shortName?: string;
   image: StaticImageData;
   price: number;
   details: string;
@@ -18,6 +19,7 @@ export type Products = {
 
 export type CartItem = {
   id: string;
+  shortName?: string;
   name: string;
   price: number;
   quantity: number;

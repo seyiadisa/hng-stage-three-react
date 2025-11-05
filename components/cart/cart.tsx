@@ -3,8 +3,8 @@
 import { useCart } from "@/providers/cart-provider";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Button } from "../ui/button";
-import Image from "next/image";
 import { formatPrice } from "@/lib/utils";
+import CartListItem from "./cart-item";
 
 export default function CartDropdown({
   children,
@@ -22,7 +22,7 @@ export default function CartDropdown({
       <PopoverTrigger asChild>
         <button className="">{children}</button>
       </PopoverTrigger>
-      <PopoverContent className="rounded-md bg-white p-4 shadow-lg">
+      <PopoverContent className="rounded-md bg-white px-7 py-8">
         <div className="flex items-center justify-between">
           <h2 className="text-h6">Cart ({cart.length})</h2>
           <button onClick={clearCart} className="underline opacity-50">
@@ -31,34 +31,22 @@ export default function CartDropdown({
         </div>
         {cart.length > 0 && (
           <>
-            <div className="w-16 space-y-6">
+            <ul className="mt-8 space-y-6">
               {cart.map((item) => (
-                <li key={item.id} className="flex items-center justify-between">
-                  <div className="bg-muted basis-16 rounded-md p-3">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      className="size-auto object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold">{item.name}</p>
-                    <p className="text-xs opacity-50">${item.price}</p>
-                  </div>
-
-                  <span className="text-sm opacity-50">x{item.quantity}</span>
-                </li>
+                <CartListItem key={item.id} item={item} />
               ))}
-            </div>
-            <div className="mt-4 flex items-center justify-between">
+            </ul>
+            <div className="mt-8 flex items-center justify-between">
               <span className="uppercase opacity-50">Total</span>
-              <span className="text-h6 font-bold tracking-[0px]">
+              <span className="text-lg font-bold">
                 {formatPrice(totalPrice)}
               </span>
             </div>
           </>
         )}
-        <Button className="w-full">Checkout</Button>
+        <Button className="mt-6 w-full" disabled={cart.length === 0}>
+          Checkout
+        </Button>
       </PopoverContent>
     </Popover>
   );

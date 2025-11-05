@@ -21,6 +21,7 @@ export default function AddToCart({
     id,
     quantity,
     name: product.name,
+    shortName: product.shortName,
     price: product.price,
     image: product.image,
   };

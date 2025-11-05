@@ -9,6 +9,7 @@ import { Products } from "@/types";
 export const products: Products = {
   xx99ii: {
     isNew: true,
+    shortName: "XX99 MK II",
     name: "XX99 Mark II Headphones",
     image: xx99iiImg,
     price: 2999,
