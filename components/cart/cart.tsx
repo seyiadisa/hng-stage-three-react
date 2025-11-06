@@ -5,6 +5,9 @@ import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Button } from "../ui/button";
 import { formatPrice } from "@/lib/utils";
 import CartListItem from "./cart-item";
+import Link from "next/link";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function CartDropdown({
   children,
@@ -12,13 +15,22 @@ export default function CartDropdown({
   children: React.ReactNode;
 }) {
   const { cart, clearCart } = useCart();
+  const pathname = usePathname();
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [prevPath, setPrevPath] = useState(pathname);
+
   const totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
 
+  if (prevPath !== pathname) {
+    setPrevPath(pathname);
+    setIsCartOpen(false);
+  }
+
   return (
-    <Popover>
+    <Popover open={isCartOpen} onOpenChange={(open) => setIsCartOpen(open)}>
       <PopoverTrigger asChild>
         <button className="">{children}</button>
       </PopoverTrigger>
@@ -44,9 +56,11 @@ export default function CartDropdown({
             </div>
           </>
         )}
-        <Button className="mt-6 w-full" disabled={cart.length === 0}>
-          Checkout
-        </Button>
+        <Link href="/checkout">
+          <Button className="mt-6 w-full" disabled={cart.length == 0}>
+            Checkout
+          </Button>
+        </Link>
       </PopoverContent>
     </Popover>
   );
