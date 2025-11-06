@@ -29,9 +29,11 @@ export default function ProductHighlights() {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <Button className="w-fit bg-black hover:bg-[#4C4C4C] md:mt-4">
-              <Link href="/product/zx9">See Product</Link>
-            </Button>
+            <Link href="/product/zx9">
+              <Button asChild className="bg-black hover:bg-[#4C4C4C] md:mt-4">
+                See Product
+              </Button>
+            </Link>
           </div>
         </section>
 
@@ -48,9 +50,11 @@ export default function ProductHighlights() {
             <h1 className="text-[28px] leading-[100%] font-bold tracking-[2px] uppercase">
               Zx7 Speaker
             </h1>
-            <Button variant={"outline"} className="bg-transparent">
-              <Link href="/product/zx7">See Product</Link>
-            </Button>
+            <Link href="/product/zx7">
+              <Button asChild variant={"outline"} className="bg-transparent">
+                See Product
+              </Button>
+            </Link>
           </div>
         </section>
 
@@ -66,9 +70,15 @@ export default function ProductHighlights() {
             <h1 className="text-[28px] leading-[100%] font-bold tracking-[2px] uppercase">
               YX1 Earphones
             </h1>
-            <Button variant={"outline"} className="bg-primary-foreground">
-              <Link href="/product/yx1">See Product</Link>
-            </Button>
+            <Link href="/product/yx1">
+              <Button
+                asChild
+                variant={"outline"}
+                className="bg-primary-foreground"
+              >
+                See Product
+              </Button>
+            </Link>
           </div>
         </section>
       </div>

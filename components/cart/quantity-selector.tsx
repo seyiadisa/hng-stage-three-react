@@ -16,15 +16,23 @@ export default function QuantitySelector({
   };
 
   return (
-    <div className="bg-muted flex h-12 w-[120px] items-center justify-between px-[15.5px] text-sm">
-      <button aria-label="Increment quantity" onClick={handleDecrement}>
-        <Minus className="h-4 w-4 opacity-25" />
+    <div className="bg-muted [&>button]:hover:text-primary flex h-12 w-[120px] items-center justify-between px-[15.5px] text-sm [&>button]:hover:opacity-100">
+      <button
+        className="opacity-25"
+        aria-label="Increment quantity"
+        onClick={handleDecrement}
+      >
+        <Minus className="h-4 w-4" />
       </button>
       <span className="text-center leading-[100%] font-bold tracking-[1px]">
         {quantity}
       </span>
-      <button aria-label="Decrement quantity" onClick={handleIncrement}>
-        <Plus className="h-4 w-4 opacity-25" />
+      <button
+        className="opacity-25"
+        aria-label="Decrement quantity"
+        onClick={handleIncrement}
+      >
+        <Plus className="h-4 w-4" />
       </button>
     </div>
   );

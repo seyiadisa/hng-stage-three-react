@@ -32,9 +32,9 @@ export default function Banner() {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
-        <Button asChild>
-          <Link href="/product/xx99ii">See Product</Link>
-        </Button>
+        <Link href="/product/xx99ii">
+          <Button asChild>See Product</Button>
+        </Link>
       </div>
     </section>
   );

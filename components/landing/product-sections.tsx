@@ -70,9 +70,11 @@ function Section({
       >
         {product}
       </h1>
-      <Button variant={"ghost"} asChild>
-        <Link href={`/${product}`}>Shop</Link>
-      </Button>
+      <Link href={`/${product}`}>
+        <Button variant={"ghost"} asChild>
+          Shop
+        </Button>
+      </Link>
     </li>
   );
 }
